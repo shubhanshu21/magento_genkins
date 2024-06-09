@@ -26,7 +26,6 @@ pipeline {
                 script {
                     withCredentials([
                         usernamePassword(
-                            credentialsId: "magento-repo",
                             usernameVariable: "e5669a15f3ce3f484175772baef146d1",
                             passwordVariable: "da292acbb76e8505c95dc193d37f397d"
                         )
