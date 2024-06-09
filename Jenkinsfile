@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent any
 
     options {
         copyArtifactPermission('m2-demo-store/DeployDemoStore')
