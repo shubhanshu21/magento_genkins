@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent any
 
     options {
         copyArtifactPermission('m2-demo-store/DeployDemoStore')
@@ -25,15 +21,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    dir 'docker/'
-                    label 'master'
-                    args '-v /root/jenkins_home/.composer:/.composer'
-                }
-            }
-
+            agent any
             steps {
                 script {
                     withCredentials([
